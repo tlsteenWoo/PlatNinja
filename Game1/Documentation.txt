@@ -1,0 +1,3 @@
+﻿Started in Program.cs
+Walking through PlatNinja.cs
+	Commenting EditorBackend.cs

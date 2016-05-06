@@ -1,0 +1,86 @@
+﻿*Platformer Essentials for player experience
+-Control (essential to any PLAYER experience)
+-Movement
+-Environment that accomadates movement
+-Abilities (Augment movement)
+-Deformation (of player or environment) (Changes interaction between player and environment)
+-Incentive to move & explore
+
+*Game anecdotes (potential mechanics)
+-You must reach the end of a hall, so you jump through the entrance way.
+Flying through the air, lasers watch your every move. If you move they will evaporate you.
+As you reach the ground they stop monitoring you, calculating your death to the triggered spike floors.
+You quickly react and launch forward into the air, escaping the traps and sailing through the lasers once more.
+	-Not Appropriate: Since there is little to do in the air anyway the lasers dont offer much pressure since you wouldnt move until near the floor anyway
+
+*Game Mechanics
+-Feedback for input
+	-On the ground: Left and right proc walking animation. Down procs crouching. Up procs looking up.
+	-In air: Left and right proc a spin. Down tucks in legs. Up looks up.
+	-(POTENTIAL)If I want to pursue the whole, 'no input unless not moving' thing. Then,
+	it would be appropriate to have animations of the character trying to slow down or catch his footing.
+-Pressure (Applying pressure, relieving pressure, lacking pressure)
+	-Seems like a good theme to fit the controls
+	-Mechanics like sliding (ice), enemies (threats), and lasers can apply pressure to demand correct timing.
+	-Mechanics that lack pressure are things like pits, where the player has all the time they need to setup,
+	this is a good mixup, gives the player breathing room and control over the pace.
+	-Solid ground, with high friction and no threats relieves pressure, some other forms would be nice.
+		-Have a little cloud animation (sigh of relief) when landing on solid ground, could be a good form of mirroring
+-DASH?
+	-I am currently trying to stick to mechanics that dont diverge from basic platforming (mario) mechanics
+	-BUT a roll, or street fighter dash could be fun and simple (double arrow input)
+*Control Mechanics: It seems like in a game with such high gravity and no air control, there is a need for mechanics
+that allow the player to control the situation.
+	-Slide
+		-Ice is pretty interesting but the sliding mechanic is such fun that it seemed key to the core movement.
+		So turning it into a controllable slide made sense, and tying it to the crouch made it feel more appropriate
+		and less troublesome controlling the keys.
+	-Wall Slide
+-NPCs, good (civilians, allies) bad (enemies) and neutral (critters). Does a game benefit from a variety of moral sides?
+	-Can apply pressure
+		-They can provide damage in a health system, they can physically set you back, they could demotivate
+	-AI - Enemies must interact with the platformer essentials, but not neccesarily follow them themselves
+		-Ways of interacting with the platforming essentials through the player
+			-Disability - The crippling of control
+			-Displacement - An involuntary ability, involuntary movement
+			-Disconnect - Interfering between player-environment interactions.
+
+*Paradigms
+	-Designing Gameplay
+		-If you stumble upon a form of gameplay (anything that evokes a sensation), flesh it out with visuals, mechanics, audio, etc
+		(ice arrived from testing collisions and having no friction, while also having the ability to super-jump)
+		-Implementing an in-game editor allows a invaluable design tool, it allows you to learn more about your gameplay
+	-Designing Tech
+		-Focus, pick something to work on and do it to it.
+			-If you find something requires more pieces to be done dont reroute, implement placement code
+		-When implementing, work on it to the point of completeness not correctness
+			-For the sake of fast development
+			-Can be fixed / enhanced later
+		-Stop! Before implementing a system consider whether on some fundamental level it doesnt work generally, do a specific solution.
+		And for specific solutions STOP! consider whether you may be addressing a general problem and consider a solution that can be used generally.
+	-Cleaning Up
+		-Solidifying any component of the architecture reveals flaws in the rest
+		-The decision between updating and redoing needs careful consideration
+			-It may be the case that low level systems tend to run more independantly and inform the fate of other systems.
+			These higher level systems seem to have more dependancies and a completely reimagining of high level systems may
+			make more sense. Low level systems can make slight adjustments to facicilate changes.
+
+
+*Challenges
+	-How to make it feel like the players abilities are potent?
+		-Problem: The player is inputting more complex than normal controls to do common abilities (leaping, sliding, etc)
+		As well as being unable to do some common abilities like moving in the air. How do I make less feel like more?
+		-Solutions
+			-Relativity: Supplying other entities and abilities for the player to compare themselves to
+				-NPC's that are of different factions and capabilities, like citizens with no power nearing the players.
+			-Feedback: When the player does something, as a designer I have direct control over what the feedback is to the action.
+				-Visual Effects: Falling from a great height crumbles the ground, sliding to a stop kicks up dirt, etc.
+				I find that imagining games without effects would still leave a gratifying effect, is this because I am aware
+				of what the game is like so I no longer require additional assistance, what if it never had those effects?
+				-Audio Effects
+
+*Decisions
+	-Jump height
+		-For the minor jump it felt appropriate for it to reach just above the heads of the basic enemy (same as your height)
+	-Redoing Gameplay
+		-After cleaning up the physics and making many changes it seems appropriate to remove all gameplay logic and redo it under the new architecture
